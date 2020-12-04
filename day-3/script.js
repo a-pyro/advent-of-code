@@ -55,6 +55,7 @@ Starting at the top-left corner of your map and following a slope of right 3 and
  */
 
 const arrMap = map.split('\n');
+console.log(arrMap[0].length);
 
 const howManyTrees = (map, right, down) => {
     // repeating the map as manu times as needed
