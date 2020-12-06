@@ -68,3 +68,6 @@ for (let index = 0; index < seatIds.length; index++) {
 }
 
 console.log(missingSpot);
+
+// or
+console.log(seatIds.filter((el, i, arr) => arr[i + 1] - el !== 1)[0] + 1);
