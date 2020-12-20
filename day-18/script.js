@@ -104,12 +104,33 @@ const doHomeWorks = (homeworks) => {
     return result;
 };
 
-doHomeWorks(input); // yay
-// solveParenthesis(solveParenthesis(demo2));
+// doHomeWorks(input); // yay
 
-// console.log(result);
-/* console.log(Number.isNaN('3'));
-console.log(Number.isNaN(3));
-console.log(Number.isNaN(parseFloat('+')));
-console.log(parseFloat('+'));
- */
+// PART 2 --------------------------------------------
+// with + that precede * in operator precedence, i need to apply solveParenthesis like algo, to first solve the additions
+const solveExpressionPart2 = (expression) => {
+    console.log(expression);
+    const arrExp = expression
+        .split(' ')
+        .map((el) => (isNaN(parseFloat(el)) ? el : parseFloat(el)));
+    console.log(arrExp);
+    let accumulator = 0;
+
+    let temp = [...arrExp];
+
+    while (temp.includes('+')) {
+        const operatorIndex = temp.indexOf('+');
+        const solved = temp[operatorIndex - 1] + temp[operatorIndex + 1];
+        temp.splice(operatorIndex - 1, 3, solved);
+        console.log(temp);
+    }
+
+    const result = arrExp
+        .filter((el) => typeof el === 'number')
+        .reduce((acc, curr) => acc * curr);
+    console.log(result);
+    return result;
+};
+
+solveExpressionPart2('1 + 2 * 3 + 4 * 5 + 6');
+solveExpressionPart2();
