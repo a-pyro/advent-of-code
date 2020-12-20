@@ -7,7 +7,7 @@ const demo2 = '8 + 3 + ((2 + 3) * 8 * 5 + 8 * (2 * 9 * 8 + 5 * 2) + 2)';
 const solveExpression = (expression) => {
     let accumulator = 0;
     let lastOp = null;
-    let exprArray = expression
+    const exprArray = expression
         .split(' ')
         .map((el) => (isNaN(parseFloat(el)) ? el : parseFloat(el)));
     // console.log(exprArray);
@@ -47,7 +47,10 @@ const solveParenthesis = (expression) => {
         if (element === ')') closingIndex = i + 1;
         // when i find a closing parenthesis after an opening one
         if (closingIndex) {
-            let exprBetweenPare = expression.slice(openingIndex, closingIndex);
+            const exprBetweenPare = expression.slice(
+                openingIndex,
+                closingIndex
+            );
             // console.log(exprBetweenPare);
 
             // console.log(exprBetweenPare.slice(1, exprBetweenPare.length - 1)); withoutparen
