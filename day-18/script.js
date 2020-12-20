@@ -201,4 +201,5 @@ const doHomeWorksPart2 = (homeworks) => {
     return result;
 };
 
+// ! CODE NEED TO BE DRYIED
 doHomeWorksPart2(input);
