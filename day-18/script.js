@@ -129,7 +129,7 @@ const solveExpressionPart2 = (expression) => {
         .filter((el) => typeof el === 'number')
         .reduce((acc, curr) => acc * curr);
     console.log(result);
-    return result;
+    return result; 
 };
 
 // solveExpressionPart2('2 + 8 * 10 + 10 + 10 + 10 * 10'); //231
